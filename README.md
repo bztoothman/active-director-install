@@ -117,7 +117,7 @@ This guide will walk you through setting up Active Directory in a Virtual Machin
    - Skip the password setup by hitting **Next**.
    - On the "Always have access to your recent browsing data" screen, select **Not now**.
    - Under Choose privacy settings for your device, turn all settings from **Yes** to **No**.
-   - Click *&Skip** under "Let's customize your experience."
+   - Click **Skip** under "Let's customize your experience."
    - Click **Not now** under "Let Cortana help you get things done."
    - Windows will now start setting up until you land on the Windows desktop.
 
