@@ -1,3 +1,7 @@
+<p align="center">
+<img src="https://i.imgur.com/YBVYEKu.png" alt="Windows Server 2019"/>
+</p>
+
 # Setting up Active Directory in a Virtual Machine (VM)
 
 Overview: This guide will walk you through the process of setting up Active Directory (AD) in a Virtual Machine (VM) using Hyper-V Manager.
