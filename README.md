@@ -8,6 +8,7 @@ Overview: This guide will walk you through the process of setting up Active Dire
 
 ## Prerequisites
 
+- **Hyper-V**
 - **Server 2019 ISO (Domain Controller):** [Download Link](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019)
 - **Windows 10 ISO (Client):** [Download Link](https://www.microsoft.com/en-us/software-download/windows10)
 
