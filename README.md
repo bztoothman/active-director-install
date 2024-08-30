@@ -14,6 +14,7 @@ This guide will walk you through setting up Active Directory in a Virtual Machin
    - Go to **Action** -> **Virtual Switch Manager** -> **Virtual Switches** -> **New virtual network switch** -> **Internal** -> **Create Virtual Switch**.
    - Rename the switch to Internal Network
    - The internal network allows the Domain Controller and the Client to communicate.
+<img src="https://i.imgur.com/GIZ7mru.png" height="60%" width="60%" alt="New virtual network switch"/>
 
 ## Creating a New VM in Hyper-V (Domain Controller)
 
@@ -30,12 +31,14 @@ This guide will walk you through setting up Active Directory in a Virtual Machin
 2. **Adjust VM Settings:**
    - Before starting the Windows Server installation, go to **VM settings** -> Set processors to 2.
    - Add a new network adapter: **Add Hardware** -> **Network Adapter** -> **Virtual switch** from **Not connected** to **Internal Network** Apply and OK.
+<img src="https://i.imgur.com/sfdRdo7.png" height="60%" width="60%" alt="Processor 2"/>
 
 3. **Install Windows Server 2019:**
    - Right-click **DC-1** -> **Connect** -> **Start**.
    - Proceed with the installation by selecting -> **Next** -> **Install now** -> **Windows Server 2019 Standard Evaluation (Desktop Experience)**.
    - Accept the license terms -> **Custom: Install Windows only (advanced)** -> Select **Drive 0 Unallocated Space** -> Next.
    - After the installation is complete, set the password for the built-in administrator account to 'Password1'.
+<img src="https://i.imgur.com/ojTR97i.png" height="80%" width="80%" alt="Windows Server 2019 Standard Evaluation (Desktop Experience)"/>
 
 ## Configuring the Network
 
@@ -44,6 +47,7 @@ This guide will walk you through setting up Active Directory in a Virtual Machin
    - Right-click **Ethernet** with 'Unidentified network' (Internal network) -> **Properties** -> Highlight **Internet Protocol Version 4 (TCP/IPv4)** -> **Properties**.
    - Under 'Use the following IP address' Set IP address: `172.16.0.1`, Subnet Mask: `255.255.255.0`, Gateway: `<empty>`, Preferred DNS: `127.0.0.1`.
    - Rename this network to `X_Internal_X`, and rename the other to `_INTERNET_`.
+<img src="https://i.imgur.com/Y78jNqz.png" height="60%" width="60%" alt="Internet Protocol Version 4 (TCP/IPv4)"/>
 
 2. **Rename the Windows Server:**
    - Right-click the Windows icon -> **System** -> **Rename this PC** -> Rename to `DC-1` -> **Restart now**.
@@ -59,6 +63,7 @@ This guide will walk you through setting up Active Directory in a Virtual Machin
    - After installation, in **Server Manager**, click the yellow flag in the top right -> Under **Post-deployment Configuration**, click **Promote this server to a domain controller**.
    - Select **Add a new forest** -> Set the root domain name to `mydomain.com`-> **Next** -> Use Password: `Password1` -> **Next** -> Uncheck **Create DNS delegation'** -> **Next** until the prerequisites check -> **Install**.
    - The VM will automatically restart.
+<img src="https://i.imgur.com/2F1aT7j.png" height="60%" width="60%" alt="new forest"/>
 
 3. **Create Domain Admin Account:**
    - After reboot, login with `Administrator`, Password: `Password1`.
@@ -81,6 +86,7 @@ This guide will walk you through setting up Active Directory in a Virtual Machin
      - On the login screen, select the newly created admin account (e.g., `a-btoothman`).
      - Enter the password (`Password1`) and log in.
      - Verify that the account has the correct permissions by accessing **Active Directory Users and Computers** and confirming the user has Domain Admin rights.
+<img src="https://i.imgur.com/D1bNMMl.png" height="60%" width="60%" alt="AdminAccount"/>
 
 5. **Install Remote Access:**
    - Go to **Add roles and features** -> **Install Remote Access** -> **DirectAccess and VPN (RAS)** and **Routing** -> **Next** until you can install.
@@ -92,6 +98,7 @@ This guide will walk you through setting up Active Directory in a Virtual Machin
    - Configure the DHCP server: Set Start IP `172.16.0.100`, End IP `172.16.0.200`, Subnet mask `255.255.255.0`
    - Router (Default Gateway) `172.16.0.1` -> **Add** -> **Next** until til **Finish**.
    - Right-click `dc-1.mydomain.com` and **Authorize** -> Refresh.
+<img src="https://i.imgur.com/GjdMmOF.png" height="60%" width="60%" alt="DHCPIP"/>
 
 ## Setting Up the Client PC (Windows 10)
 
@@ -126,6 +133,7 @@ This guide will walk you through setting up Active Directory in a Virtual Machin
    - Join the domain: Select **Domain** -> Enter `mydomain.com`.
    - Log in with your domain admin account: Username `a-btoothman`, Password `Password1`.
    - When prompted with "Do you want to allow your PC to be discoverable by other PCs and devices on this network?" select **Yes**.
+<img src="https://i.imgur.com/i0CQQq9.png" height="40%" width="40%" alt="ClientandDomainname"/>
 
 6. **Complete Setup:**
    - Once the Client1 VM reboots, you can log in with your domain account.
