@@ -1,6 +1,6 @@
 # Setting up Active Directory in a Virtual Machine (VM)
 
-This guide will walk you through setting up Active Directory in a Virtual Machine using Hyper-V Manager.
+Overview: This guide will walk you through the process of setting up Active Directory (AD) in a Virtual Machine (VM) using Hyper-V Manager.
 
 ## Prerequisites
 
