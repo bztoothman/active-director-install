@@ -1,10 +1,9 @@
 # Setting up Active Directory in a Virtual Machine (VM)
 
-This guide will walk you through setting up Active Directory in a Virtual Machine using either VirtualBox or Hyper-V Manager. If you’re using VirtualBox, ensure you download and install the VirtualBox Extension Pack. This guide uses Hyper-V.
+This guide will walk you through setting up Active Directory in a Virtual Machine using Hyper-V Manager.
 
 ## Prerequisites
 
-- **Oracle VirtualBox (VM):** [Download Link](https://www.virtualbox.org/wiki/Downloads)
 - **Server 2019 ISO (Domain Controller):** [Download Link](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019)
 - **Windows 10 ISO (Client):** [Download Link](https://www.microsoft.com/en-us/software-download/windows10)
 
