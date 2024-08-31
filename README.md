@@ -4,7 +4,7 @@
 
 # Setting up Active Directory in a Virtual Machine (VM)
 
-Overview: This guide will walk you through the process of setting up Active Directory (AD) in a Virtual Machine (VM) using Hyper-V Manager.
+This project is a guide that provides a step-by-step walkthrough for setting up an Active Directory (AD) using two Virtual Machines (VMs) in Hyper-V. One VM runs Windows Server 2019, serving as the Domain Controller (DC), while the other VM runs Windows 10, acting as the client. This setup is designed for establishing a basic Active Directory environment, providing a foundation for managing Active Directory.
 
 ## Prerequisites
 
